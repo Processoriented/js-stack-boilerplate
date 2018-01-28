@@ -18,7 +18,7 @@ import {
   HELLO_ASYNC_PAGE_ROUTE,
 } from './routes'
 
-const App = () =>
+const App = () => (
   <div style={{ paddingTop: 54 }}>
     <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
     <Nav />
@@ -30,5 +30,6 @@ const App = () =>
     </Switch>
     <Footer />
   </div>
+)
 
 export default App

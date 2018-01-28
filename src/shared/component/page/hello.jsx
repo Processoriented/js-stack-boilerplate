@@ -8,7 +8,7 @@ import HelloButton from '../../container/hello-button'
 
 const title = 'Hello Page'
 
-const HelloPage = () =>
+const HelloPage = () => (
   <div className="container mt-4">
     <Helmet
       title={title}
@@ -25,5 +25,6 @@ const HelloPage = () =>
       </div>
     </div>
   </div>
+)
 
 export default HelloPage

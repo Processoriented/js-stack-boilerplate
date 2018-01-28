@@ -1,18 +1,21 @@
 // @flow
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
-type Props = {
-  label: string,
-  handleClick: Function,
-}
-
-const Button = ({ label, handleClick }: Props) =>
+const Button = (props: any) => (
   <button
-    onClick={handleClick}
+    onClick={props.handleClick}
     className="btn btn-primary"
     type="button"
-    role="button"
-  >{label}</button>
+  >
+    {props.label}
+  </button>
+)
+
+Button.propTypes = {
+  label: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
+}
 
 export default Button

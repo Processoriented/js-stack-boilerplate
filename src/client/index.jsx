@@ -26,14 +26,15 @@ const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMP
 const preloadedState = window.__PRELOADED_STATE__
 /* eslint-enable no-underscore-dangle */
 
-const store = createStore(combineReducers(
-  { hello: helloReducer }),
+const store = createStore(
+  combineReducers({ hello: helloReducer }),
   { hello: Immutable.fromJS(preloadedState.hello) },
-  composeEnhancers(applyMiddleware(thunkMiddleware)))
+  composeEnhancers(applyMiddleware(thunkMiddleware)),
+)
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)
 
-const wrapApp = (AppComponent, reduxStore) =>
+const wrapApp = (AppComponent, reduxStore) => (
   <Provider store={reduxStore}>
     <BrowserRouter>
       <AppContainer>
@@ -41,6 +42,7 @@ const wrapApp = (AppComponent, reduxStore) =>
       </AppContainer>
     </BrowserRouter>
   </Provider>
+)
 
 ReactDOM.render(wrapApp(App, store), rootEl)
 

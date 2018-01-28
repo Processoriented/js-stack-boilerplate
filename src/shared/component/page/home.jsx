@@ -24,7 +24,8 @@ const styles = {
   },
 }
 
-const HomePage = ({ classes }: { classes: Object }) =>
+/* eslint-disable jsx-a11y/anchor-is-valid */
+const HomePage = ({ classes }: { classes: Object }) => (
   <div>
     <Helmet
       meta={[
@@ -42,7 +43,7 @@ const HomePage = ({ classes }: { classes: Object }) =>
         <div className="col-md-4 mb-4">
           <h3 className="mb-3">Bootstrap</h3>
           <p>
-            <button type="button" role="button" data-toggle="modal" data-target=".js-modal-example" className="btn btn-primary">Open Modal</button>
+            <button type="button" data-toggle="modal" data-target=".js-modal-example" className="btn btn-primary">Open Modal</button>
           </p>
         </div>
         <div className="col-md-4 mb-4">
@@ -59,5 +60,7 @@ const HomePage = ({ classes }: { classes: Object }) =>
     </div>
     <ModalExample />
   </div>
+)
+/* eslint-enable jsx-a11y/anchor-is-valid */
 
 export default injectSheet(styles)(HomePage)

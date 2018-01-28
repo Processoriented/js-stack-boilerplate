@@ -1,5 +1,6 @@
 // @flow
 
+// flow-disable-next-line
 import Immutable from 'immutable'
 import type { fromJS as Immut } from 'immutable'
 

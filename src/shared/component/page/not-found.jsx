@@ -7,7 +7,8 @@ import { HOME_PAGE_ROUTE } from '../../routes'
 
 const title = 'Page Not Found!'
 
-const NotFoundPage = () =>
+/* eslint-disable jsx-a11y/anchor-is-valid */
+const NotFoundPage = () => (
   <div className="container mt-4">
     <Helmet title={title} />
     <div className="row">
@@ -17,5 +18,7 @@ const NotFoundPage = () =>
       </div>
     </div>
   </div>
+)
+/* eslint-enable jsx-a11y/anchor-is-valid */
 
 export default NotFoundPage

@@ -8,7 +8,7 @@ import HelloAsyncButton from '../../container/hello-async-button'
 
 const title = 'Async Hello Page'
 
-const HelloAsyncPage = () =>
+const HelloAsyncPage = () => (
   <div className="container mt-4">
     <Helmet
       title={title}
@@ -25,5 +25,6 @@ const HelloAsyncPage = () =>
       </div>
     </div>
   </div>
+)
 
 export default HelloAsyncPage
