@@ -1,5 +1,3 @@
-// @flow
-
 import 'babel-polyfill'
 
 import Immutable from 'immutable'
@@ -47,16 +45,17 @@ const wrapApp = (AppComponent, reduxStore) =>
 ReactDOM.render(wrapApp(App, store), rootEl)
 
 if (module.hot) {
-  // flow-disable-next-line
-  module.hot.accept('../shared/app', () => {
-    // eslint-disable-next-line global-require
-    const NextApp = require('../shared/app').default
-    ReactDOM.render(wrapApp(NextApp, store), rootEl)
-  })
+  module.hot.accept(
+    '../shared/app',
+    () => {
+      // eslint-disable-next-line global-require
+      const NextApp = require('../shared/app').default
+      ReactDOM.render(wrapApp(NextApp, store), rootEl)
+    },
+  )
 }
 
 const jssServerSide = document.querySelector(JSS_SSR_SELECTOR)
-// flow-disable-next-line
 jssServerSide.parentNode.removeChild(jssServerSide)
 
 setUpSocket(store)
